@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization</title> <!-- Título de la página -->
+    <link rel="stylesheet" href="../styles/styles.css"> <!-- Enlace al archivo de estilos -->
+</head>
+
+<body>
+    <div class="container">
+        <h1>Data Visualization</h1> <!-- Título principal -->
+        <form>
+            <div class="sub-box">
+                <label for="device">Device:</label> <!-- Etiqueta para el campo de dispositivo -->
+                <input type="text" list="device-list" id="device" /> <!-- Campo de entrada para el dispositivo -->
+                <datalist id="device-list"> <!-- Lista de opciones para el dispositivo -->
+                    <option value="all"> <!-- Opción all -->
+                    <option value="arduino"> <!-- Opción para Arduino -->
+                    <option value="esp32"> <!-- Opción para ESP32 -->
+                </datalist>
+            </div>
+            <div class="sub-box">
+                <label for="order">Order by:</label> <!-- Etiqueta para el campo de orden -->
+                <input type="text" list="var-list" id="order" /> <!-- Campo de entrada para el orden -->
+                <datalist id="var-list"> <!-- Lista de opciones para el orden -->
+                    <option value="date"> <!-- Opción para ordenar por fecha -->
+                    <option value="temperature"> <!-- Opción para ordenar por temperatura -->
+                    <option value="humidity"> <!-- Opción para ordenar por humedad -->
+                </datalist>
+            </div>
+            <div class="sub-box">
+                <label for="sort-dir">Sort-dir:</label> <!-- Etiqueta para el campo de dirección de orden -->
+                <input type="checkbox" id="sort-dir" /> <!-- Casilla de verificación para la dirección de orden -->
+            </div>
+            <div class="sub-box">
+                <label for="limit">Limit</label> <!-- Etiqueta para el campo de límite -->
+                <input type="number" id="limit" min=0 value="0" /> <!-- Campo de entrada para el límite -->
+            </div>
+            <!-- Posibilidad de mostrar un calendario -->
+            <div class="sub-box">
+                <label for="from-date">from:</label> <!-- Etiqueta para el campo de fecha inicial -->
+                <input type="date" id="from-date" value="2022-01-01" min="2022-01-01" max="2024-04-23" />
+                <!-- Campo de entrada para la fecha inicial -->
+            </div>
+            <div class="sub-box">
+                <button type="button" onclick="fetchData()">Apply</button> <!-- Botón para aplicar los filtros -->
+            </div>
+        </form>
+
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>Id</th> <!-- Encabezado para el identificador -->
+                    <th>Device</th> <!-- Encabezado para el dispositivo -->
+                    <th>Temperature</th> <!-- Encabezado para la temperatura -->
+                    <th>Humidity</th> <!-- Encabezado para la humedad -->
+                    <th>Date</th> <!-- Encabezado para la fecha -->
+                </tr>
+            </thead>
+            <tbody id="table-body"> <!-- Cuerpo de la tabla para los datos -->
+            </tbody>
+        </table>
+    </div>
+    <script src="../scripts/script.js"></script> <!-- Enlace al archivo de script -->
+</body>
+
+</html>
