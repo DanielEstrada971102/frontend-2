@@ -1,0 +1,36 @@
+body{
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+h1 {
+    color: rgba(9,9,121,1);
+}
+.container {
+    background: white;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#data-table, #form-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#data-table th, #data-table td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+
+form {
+    width: 100%;
+    margin: 0px;
+    padding: 10px 0px;
+    justify-content: space-between;
+    display: flex
+}
+
+.sub-box {
+    flex: 1;
+}
